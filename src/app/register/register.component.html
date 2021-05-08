@@ -1,0 +1,32 @@
+<html>
+
+<body>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h1>Sign-up</h1>
+            <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" novalidate class="bg-light" action="../login/login.component.html">
+                <div class="form-group">
+                    <label for="email">Username: </label>
+                    <input type="text" name="user" id="email" class="form-control" #name="ngModel" required ngModel>
+                    <span *ngIf="name.invalid && name.touched">**Please enter your username</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email" class="form-control" #email="ngModel" email required ngModel>
+                    <span *ngIf="email.invalid && email.touched">please enter valid mail**</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password: </label>
+                    <input type="password" id="password" name="password" class="form-control" #password="ngModel" required ngModel>
+                    <span *ngIf="password.invalid && password.touched">please enter valid password**</span>
+                </div><br>
+                <div class="col-12">
+                    <button type="submit" name="submit" class="btn btn-success" [disabled]="myForm.invalid">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+.form-control{
+    font-family: sans-serif;
+    font-style: italic;
+}
+h1{
+    text-align: center;
+}
+.ng-invalid.ng-touched{
+    border-color: red;
+}
